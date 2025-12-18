@@ -1,7 +1,27 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { listarPersonas } from "@/services/PersonasService";
+import type { Persona } from "@/types/Personas";
+import { useState, useEffect } from "react";
 
 export default function Personas() {
+    const [personas, setPersonas] = useState<Persona[]>();
+    useEffect(() => {
+        listarPersonas().then((response: APIResult<Persona[]>) => {
+            if (response.ok) {
+                const listado: Persona[] = response.data?.map( p => {
+                    return {
+                        Id: p.id,
+                        nombre: p.nombre,
+                        email: p.email,
+                    }
+                }) || []
+                setPersonas(listado);
+            } else {
+                console.log(response.error);
+            }
+        });
+    }, []);
     return <>
        <Header/>
         <main className="max-w-6xl mx-auto px-4 py-10">
