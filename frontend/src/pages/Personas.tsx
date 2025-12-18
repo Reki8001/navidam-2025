@@ -1,6 +1,9 @@
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+
 export default function Personas() {
     return <>
-       
+       <Header/>
         <main className="max-w-6xl mx-auto px-4 py-10">
     <div className="rounded-[2rem] bg-white text-slate-900 shadow-2xl ring-1 ring-black/5 overflow-hidden">
         <div className="p-6 md:p-10">
@@ -74,7 +77,7 @@ export default function Personas() {
         </div>
     </div>
 </main>
-    
+    <Footer/>
 
     </>
 }

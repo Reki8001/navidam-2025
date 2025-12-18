@@ -3,7 +3,7 @@ export default function Header(){
     return(
 <div className="sticky top-0 z-20 border-b border-white/10 bg-slate-950/70 backdrop-blur">
   <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
-    <Link to="index.html" className="flex items-center gap-3">
+    <Link to="/" className="flex items-center gap-3">
       <div className="h-10 w-10 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center shadow-lg">
         <span className="text-xl">🎅</span>
       </div>
@@ -17,7 +17,7 @@ export default function Header(){
       <Link to="/personas" className="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm">
         Personas
       </Link>
-      <Link to="alta-persona.html" className="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm">
+      <Link to="/newPersona" className="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm">
         Alta
       </Link>
       <Link to="/postal" className="px-3 py-2 rounded-xl bg-red-500 hover:bg-red-600 text-white font-extrabold text-sm">

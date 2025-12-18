@@ -1,9 +1,13 @@
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+
 export default function Postal() {
 
 
     return (
 
         <>
+        <Header/>
             <main className="max-w-6xl mx-auto px-4 py-10">
                 <div className="rounded-[2rem] bg-white text-slate-900 shadow-2xl ring-1 ring-black/5 overflow-hidden">
                     <div className="p-6 md:p-10 grid lg:grid-cols-2 gap-6">
@@ -118,6 +122,7 @@ export default function Postal() {
                     </div>
                 </div>
             </main>
+            <Footer/>
         </>
     );
 }
