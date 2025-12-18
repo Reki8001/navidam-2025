@@ -1,4 +1,4 @@
-import type { APIError, APIResult } from "@/types/errores";
+import type { APIError, APIResult } from "@/services/api.ts";
 import type { Persona } from "@/types/Personas";
 
 const baseURL: string = "http://localhost:3000";
