@@ -35,9 +35,9 @@ export default function Personas() {
         if (resultado.ok) {
             // Actualizar el estado local
             setPersonas(personas.filter((persona) => persona.id !== id));
-            alert("✅ Persona eliminada correctamente");
+            alert("Persona eliminada correctamente");
         } else {
-            alert(`❌ Error: "No se pudo eliminar"}`);
+            alert(`Error: "No se pudo eliminar"}`);
         }
     };
     return <>
@@ -79,7 +79,12 @@ export default function Personas() {
                             <th className="text-left px-4 py-3 w-[340px]">Acciones</th>
                         </tr>
                         </thead>
-
+                        
+                {personas.length === 0 && (
+                <div className="p-6 text-center text-slate-500">
+                    No hay personas registradas
+                </div>
+                )}
                         <tbody className="divide-y divide-slate-200">
                         {personas?.map(persona =>
 
@@ -111,9 +116,7 @@ export default function Personas() {
                     </table>
                 </div>
 
-                <div className="p-6 text-center text-slate-500">
-                    (React mostrará aquí “No hay personas registradas” cuando aplique)
-                </div>
+                
             </section>
         </div>
     </div>
