@@ -1,3 +1,6 @@
+import type { APIError, APIResult } from "@/types/errores";
+import type { Persona } from "@/types/Personas";
+
 const baseURL: string = "http://localhost:3000";
 
 export async function listarPersonas(): Promise<APIResult<Persona[]>> {
@@ -6,7 +9,7 @@ export async function listarPersonas(): Promise<APIResult<Persona[]>> {
     });
     if (response.ok) {
         const persona: Persona[] = await response.json();
-        return { ok: true, data: mascota };
+        return { ok: true, data: persona };
     }
     const error: APIError = await response.json();
     return { ok: false, error: error };
