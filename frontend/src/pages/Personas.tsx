@@ -1,13 +1,12 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { listarPersonas } from "@/services/PersonasService";
+import { eliminarPersona, listarPersonas } from "@/services/PersonasService";
 import type { APIResult } from "@/types/errores";
 import type { Persona } from "@/types/Personas";
 import { useState, useEffect } from "react";
 
 export default function Personas() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [personas, setPersonas] = useState<Persona[]>();
+    const [personas, setPersonas] = useState<Persona[]>([]);
     useEffect(() => {
         console.log("cargando....");
         listarPersonas().then((response: APIResult<Persona[]>) => {
@@ -25,7 +24,22 @@ export default function Personas() {
             }
         });
     }, []);
+    const handleEliminar = async (id: number) => {
+        // 1. Confirmar antes de eliminar
+        if (!window.confirm("¿Estás seguro de eliminar esta persona?")) {
+            return;
+        }
 
+        const resultado = await eliminarPersona(id);
+
+        if (resultado.ok) {
+            // Actualizar el estado local
+            setPersonas(personas.filter((persona) => persona.id !== id));
+            alert("✅ Persona eliminada correctamente");
+        } else {
+            alert(`❌ Error: "No se pudo eliminar"}`);
+        }
+    };
     return <>
        <Header/>
         <main className="max-w-6xl mx-auto px-4 py-10">
@@ -86,7 +100,7 @@ export default function Personas() {
 
                             <td className="px-4 py-3">
                                 <div className="flex flex-wrap gap-2">
-                                    <button className="px-3 py-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 font-semibold text-slate-900">
+                                    <button onClick={() => handleEliminar(persona.id)} className="px-3 py-2 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 font-semibold text-slate-900">
                                         🗑️ Eliminar
                                     </button>
                                 </div>
@@ -108,3 +122,5 @@ export default function Personas() {
 
     </>
 }
+
+
