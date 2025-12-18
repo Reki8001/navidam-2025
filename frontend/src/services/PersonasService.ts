@@ -1,7 +1,7 @@
 import type { APIError, APIResult } from "@/services/api.ts";
 import type { Persona } from "@/types/Personas";
 
-const baseURL: string = "http://localhost:3000";
+const baseURL: string = "http://localhost:8080";
 
 export async function listarPersonas(): Promise<APIResult<Persona[]>> {
     const response = await fetch(`${baseURL}/api/personas`, {
