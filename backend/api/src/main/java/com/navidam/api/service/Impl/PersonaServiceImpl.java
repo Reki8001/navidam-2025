@@ -1,5 +1,29 @@
 package com.navidam.api.service.Impl;
 
+import com.navidam.api.dto.response.PersonaResponse;
+import com.navidam.api.jpa.repository.PersonaRepository;
+import com.navidam.api.service.PersonaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
 public class PersonaServiceImpl {
+    private final PersonaRepository personaRepository;
+
+    @Autowired
+    public PersonaServiceImpl (PersonaRepository personaRepository){
+        this.personaRepository = personaRepository;
+    }
+
+    @Override
+    public List<PersonaResponse>listaPersonas(){
+        return List.of();
+    }
+
+    @Override
+    public void eliminarPersona(Long id){this.personaRepository.deleteById(id);}
+
     
 }
