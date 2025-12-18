@@ -15,6 +15,7 @@ public class ModeloPlantillaPrueba {
     private String midiUrl;   // opcional (si DAM2 sirve un enlace al .mid)
 
     public ModeloPlantillaPrueba() {
+    	
     }
 
     public ModeloPlantillaPrueba(String destinatario, String remitente, String mensaje, String melodia, LocalDateTime fechaCreacion) {

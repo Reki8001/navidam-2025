@@ -26,7 +26,9 @@ public class NaviDAMAPI {
 
     public List<Plantilla> listadoPlantillas() {
         return List.of(
-                // new Plantilla("demo").path("demo.html")
+                new Plantilla("PlantillaNavideña1").path("PlantillaNavideña1.html"),
+                new Plantilla("PlantillaNavideña2").path("PlantillaNavideña2.html"),
+                new Plantilla("PlantillaNavideña1").path("PlantillaNavideña1.html")
         );
     }
 }
