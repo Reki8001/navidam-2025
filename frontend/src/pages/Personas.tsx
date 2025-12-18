@@ -67,6 +67,8 @@ export default function Personas() {
                         </thead>
 
                         <tbody className="divide-y divide-slate-200">
+                        {personas?.map(persona =>
+
                         <tr className="hover:bg-slate-50">
                             <td className="px-4 py-3">
                                 <div className="flex items-center gap-3">
@@ -74,13 +76,13 @@ export default function Personas() {
                                         <span>👤</span>
                                     </div>
                                     <div>
-                                        <p className="font-semibold">[Nombre]</p>
-                                        <p className="text-xs text-slate-500">ID: [id]</p>
+                                        <p className="font-semibold">{persona.nombre}</p>
+                                        <p className="text-xs text-slate-500">ID: {persona.id}</p>
                                     </div>
                                 </div>
                             </td>
 
-                            <td className="px-4 py-3 text-slate-700">[Email]</td>
+                            <td className="px-4 py-3 text-slate-700">{persona.email}</td>
 
                             <td className="px-4 py-3">
                                 <div className="flex flex-wrap gap-2">
@@ -90,6 +92,7 @@ export default function Personas() {
                                 </div>
                             </td>
                         </tr>
+                        )}
                         </tbody>
                     </table>
                 </div>

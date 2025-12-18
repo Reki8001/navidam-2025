@@ -16,7 +16,7 @@ export async function listarPersonas(): Promise<APIResult<Persona[]>> {
 }
 
 
-export async function crearMascota(request: Persona): Promise<APIResult<Persona>> {
+export async function crearPersona(request: Persona): Promise<APIResult<Persona>> {
     const response = await fetch(`${baseURL}/api/personas`, {
         method: 'POST',
         body: JSON.stringify(request),
