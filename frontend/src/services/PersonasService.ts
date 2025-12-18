@@ -16,8 +16,8 @@ export async function listarPersonas(): Promise<APIResult<Persona[]>> {
 }
 
 
-/*export async function crearMascota(request: Mascota): Promise<APIResult<Mascota>> {
-    const response = await fetch(`${baseURL}/api/mascotas`, {
+export async function crearMascota(request: Persona): Promise<APIResult<Persona>> {
+    const response = await fetch(`${baseURL}/api/personas`, {
         method: 'POST',
         body: JSON.stringify(request),
         headers: {
@@ -25,15 +25,15 @@ export async function listarPersonas(): Promise<APIResult<Persona[]>> {
         },
     });
     if (response.ok) {
-        const mascota: Mascota = await response.json();
-        return { ok: true, data: mascota };
+        const persona: Persona = await response.json();
+        return { ok: true, data: persona };
     }
     const error: APIError = await response.json();
     return { ok: false, error: error };
 }
 
-export async function eliminarMascota (chip:string):Promise<APIResult<Mascota>>{
-    const response = await fetch(`${baseURL}/api/mascotas/${chip}`,{
+export async function eliminarPersona (id: number):Promise<APIResult<Persona>>{
+    const response = await fetch(`${baseURL}/api/personas/${id}`,{
         method:'DELETE',
     });
     if (response.ok){
@@ -42,4 +42,4 @@ export async function eliminarMascota (chip:string):Promise<APIResult<Mascota>>{
     }
     const error:APIError = await response.json();
     return {ok:false, error: error};
-}*/
+}
