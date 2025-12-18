@@ -2,7 +2,9 @@ package com.navidam.api.service.Impl;
 
 import com.navidam.api.dto.request.PersonaRequest;
 import com.navidam.api.dto.response.PersonaResponse;
+import com.navidam.api.jpa.entity.PersonaEntity;
 import com.navidam.api.jpa.repository.PersonaRepository;
+import com.navidam.api.mapper.PersonaMapper;
 import com.navidam.api.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,9 +22,8 @@ public class PersonaServiceImpl  implements PersonaService {
 
     @Override
     public List<PersonaResponse> listaPersonas(){
-        return personaRepository.findAll().stream()
-                .map(p -> new PersonaResponse(p.getId(), p.getNombre(), p.getEmail()))
-                .toList();
+        List<PersonaEntity> personas = this.personaRepository.findAll();
+        return personas.stream().map(PersonaMapper::mapPersonaToPersonaResponse).toList();
     }
 
     @Override
@@ -38,9 +39,9 @@ public class PersonaServiceImpl  implements PersonaService {
 
     @Override
     public PersonaResponse crearPersona(PersonaRequest request) {
-     
-
-        return null;
+        PersonaEntity persona = PersonaMapper.personaRequestToPersonaEntity(request);
+        PersonaEntity result = this.personaRepository.save(persona);
+        return PersonaMapper.mapPersonaToPersonaResponse(result);
     }
 
     @Override
