@@ -27,4 +27,15 @@ public class PersonaController {
 
     @GetMapping("/personas/{email}")
     public PersonaResponse getPersonaEmail(@PathVariable String email){return this.personaService.getPersonaEmail(email);}
+
+    @DeleteMapping("personas/{id}")
+    public void eliminarPersona(@PathVariable  Long id){
+        personaService.eliminarPersona(id);
+    }
+
+
 }
+
+
+
+

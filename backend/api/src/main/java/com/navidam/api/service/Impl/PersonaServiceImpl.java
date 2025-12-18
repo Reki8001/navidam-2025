@@ -1,5 +1,6 @@
 package com.navidam.api.service.Impl;
 
+import com.navidam.api.dto.request.PersonaRequest;
 import com.navidam.api.dto.response.PersonaResponse;
 import com.navidam.api.jpa.repository.PersonaRepository;
 import com.navidam.api.service.PersonaService;
@@ -26,12 +27,19 @@ public class PersonaServiceImpl  implements PersonaService {
 
     @Override
     public PersonaResponse getPersona(Long id) {
-   
+
         return null;
     }
 
     @Override
     public PersonaResponse getPersonaEmail(String email) {
+        return null;
+    }
+
+    @Override
+    public PersonaResponse crearPersona(PersonaRequest request) {
+     
+
         return null;
     }
 
