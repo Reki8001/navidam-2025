@@ -3,7 +3,7 @@ export default function Header(){
     return(
 <div className="sticky top-0 z-20 border-b border-white/10 bg-slate-950/70 backdrop-blur">
   <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
-    <Link to="index.html" className="flex items-center gap-3">
+    <Link to="/home" className="flex items-center gap-3">
       <div className="h-10 w-10 rounded-2xl bg-white/10 border border-white/15 flex items-center justify-center shadow-lg">
         <span className="text-xl">🎅</span>
       </div>
