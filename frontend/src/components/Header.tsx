@@ -17,7 +17,7 @@ export default function Header(){
       <Link to="/personas" className="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm">
         Personas
       </Link>
-      <Link to="alta-persona.html" className="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm">
+      <Link to="/newPersona" className="px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm">
         Alta
       </Link>
       <Link to="/postal" className="px-3 py-2 rounded-xl bg-red-500 hover:bg-red-600 text-white font-extrabold text-sm">
