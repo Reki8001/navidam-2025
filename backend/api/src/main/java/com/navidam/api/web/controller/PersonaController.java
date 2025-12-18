@@ -15,8 +15,11 @@ public class PersonaController {
     private final PersonaService personaService;
 
     @Autowired
-    public PersonaController(PersonaService personaService){this.personaService = personaService;}
+    public PersonaController(PersonaService personaService) {
+        this.personaService = personaService;
+    }
 
-}   public List<PersonaResponse> getPersonas(){
-    
+    public List<PersonaResponse> getPersonas() {
+        return this.personaService.listaPersonas();
+    }
 }
