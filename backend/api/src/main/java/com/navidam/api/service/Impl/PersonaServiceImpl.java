@@ -19,7 +19,9 @@ public class PersonaServiceImpl {
 
     @Override
     public List<PersonaResponse>listaPersonas(){
-        return List.of();
+        return personaRepository.findAll().stream()
+                .map(p -> new PersonaResponse(p.getId(), p.getNombre(), p.getEmail()))
+                .toList();
     }
 
     @Override

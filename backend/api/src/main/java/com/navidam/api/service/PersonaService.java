@@ -7,6 +7,7 @@ import java.util.List;
 public interface PersonaService {
     public List<PersonaResponse> listaPersonas();
     PersonaResponse getPersona(Long id);
+    PersonaResponse getPersonaEmail(String email);
     
     void eliminarPersona(Long id);
 }
