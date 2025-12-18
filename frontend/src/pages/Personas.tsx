@@ -9,6 +9,7 @@ export default function Personas() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [personas, setPersonas] = useState<Persona[]>();
     useEffect(() => {
+        console.log("cargando....");
         listarPersonas().then((response: APIResult<Persona[]>) => {
             if (response.ok) {
                 const listado: Persona[] = response.data?.map( (p) => {
@@ -24,6 +25,7 @@ export default function Personas() {
             }
         });
     }, []);
+
     return <>
        <Header/>
         <main className="max-w-6xl mx-auto px-4 py-10">
