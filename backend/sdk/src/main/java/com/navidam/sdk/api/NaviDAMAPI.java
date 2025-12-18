@@ -1,5 +1,6 @@
 package com.navidam.sdk.api;
 
+import com.navidam.sdk.api.melodia.CampanitasDeInvierno;
 import com.navidam.sdk.internal.html.Plantilla;
 import com.navidam.sdk.internal.melodia.Melodia;
 
@@ -18,6 +19,7 @@ public class NaviDAMAPI {
 
     public List<Melodia> listadoMelodias() {
         return List.of(
+        		CampanitasDeInvierno.crear()
                 // LaVacaLola.crear()
         );
     }
