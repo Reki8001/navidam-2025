@@ -1,7 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { eliminarPersona, listarPersonas } from "@/services/PersonasService";
-import type { APIResult } from "@/types/errores";
+import type { APIResult } from "@/services/api.ts";
 import type { Persona } from "@/types/Personas";
 import { useState, useEffect } from "react";
 
